@@ -11,7 +11,7 @@ namespace backupGame.command
         public Time()
         {
             name = "Time";
-            description = "What is the time?";
+            description = "Find out what the time is!";
 
 
         }
