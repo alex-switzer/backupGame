@@ -11,14 +11,15 @@ namespace backupGame.command
         public Clear()
         {
             name = "Clear";
-            description = "Get off the screen.";
+            description = "Clear the screen of all text";
 
 
         }
 
-        public override string lantern(List<string> result)
+        public override void lantern(List<string> result)
         {
-            return "Clearing screen, Can take up to 10 days. Sorry. ;)";
+            
+            Console.Clear();
         }
 
     }

@@ -20,6 +20,7 @@ namespace backupGame
             listOfCommands.Add(new command.Lantern());
             listOfCommands.Add(new command.IP_Trace());
             listOfCommands.Add(new command.Time());
+            listOfCommands.Add(new command.Hack());
 
             while (true)
             {
@@ -31,7 +32,8 @@ namespace backupGame
                                            : new string[] { element })  // Keep the entire item
                      .SelectMany(element => element).ToList();
 
-                string text = "Not a command!!!";
+                string text = "Please enter a registered command! For a full list type 'help'";
+                
 
                 if (result.Count != 0)
                 {
@@ -39,15 +41,26 @@ namespace backupGame
                     {
                         if (listOfCommands[i].name.ToLower() == result[0].ToLower())
                         {
-                            text = listOfCommands[i].lantern(result);
+                            if (listOfCommands[i].name == "Help")
+                            {
+                                listOfCommands[i].lantern(result, listOfCommands);
+                            }
+                            else
+                            {
+                                listOfCommands[i].lantern(result);
+
+                            }
+
+
                         }
                         
-                    
+
+
+
                     }
 
                 }
 
-                Console.WriteLine(text);
             }
         }
     }

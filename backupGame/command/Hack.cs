@@ -16,10 +16,10 @@ namespace backupGame.command
 
         }
 
-        public override string lantern(List<string> result)
+        public override void lantern(List<string> result)
         { 
 
-            return "You stole $10! good job. (from a 60 year old)";
+            Console.WriteLine( "You stole $10! good job. (from a 60 year old)");
         }
 
 

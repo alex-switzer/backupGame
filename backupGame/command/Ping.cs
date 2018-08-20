@@ -11,12 +11,10 @@ namespace backupGame.command
         public Ping()
         {
             name = "Ping";
-            description = "Ping your girl.";
-
-
+            description = "Find the response time to a specified IP";
         }
 
-        public override string lantern(List<string> result)
+        public override void lantern(List<string> result)
         {
             Random rnd = new Random();
 
@@ -24,10 +22,10 @@ namespace backupGame.command
             {
                 if (stringClassifier.getIP(result[1]))
                 {
-                    return "Pinging " + result[1] + "; Respone time " + rnd.Next(10, 100) + "ms";
+                    Console.WriteLine( "Pinging " + result[1] + "; Respone time " + rnd.Next(10, 100) + "ms");
                 }
             }
-            return "Use Ping [IP]";
+            Console.WriteLine( "Use Ping [IP]");
         }
 
 

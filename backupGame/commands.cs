@@ -12,11 +12,14 @@ namespace backupGame
         public string name;
         public string description;
 
-        public virtual string lantern(List<string> result)
+        public virtual void lantern(List<string> result)
         {
-            return "Error";
+ 
         }
+        public virtual void lantern(List<string> result, List<commands> listOfCommands)
+        {
 
+        }
 
     }
 }

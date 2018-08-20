@@ -16,12 +16,9 @@ namespace backupGame.command
 
         }
 
-        public override string lantern(List<string> result)
+        public override void lantern(List<string> result)
         {
-
-
-
-            return "The time is " + DateTime.UtcNow.ToLocalTime() + ".";
+            Console.WriteLine( "The time is " + DateTime.UtcNow.ToLocalTime() + ".");
         }
 
     }

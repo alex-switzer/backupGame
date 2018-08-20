@@ -16,9 +16,9 @@ namespace backupGame.command
 
         }
 
-        public override string lantern(List<string> result)
+        public override void lantern(List<string> result)
         {
-            return "Get hacked kid!";
+            Console.WriteLine( "Get hacked kid!");
         }
 
     }

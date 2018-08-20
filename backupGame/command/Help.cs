@@ -10,18 +10,23 @@ namespace backupGame.command
     {
         public Help()
         {
-            name = "help";
-            description = "Help you out, girl!";
-
-
+            name = "Help";
+            description = "Learn about the purpose of each command.";
         }
 
-        public override string lantern(List<string> result)
+        public override void lantern(List<string> result, List<commands> listOfCommands)
         {
+            Console.WriteLine("\n" + "List of commands:" + "\n");
+            const int paddingBuffer = 30; //gap between command and description 
+            
+            foreach (var item in listOfCommands)
+            {
+                int paddingGap = paddingBuffer - item.name.Length;
+                if (paddingGap < 0) paddingGap *= -1; //if the name is longer than the buffer of 30, avoid errors by avoiding negative numbers
+                Console.WriteLine("Command: {0}" + "Description: {1}".PadLeft(paddingGap), item.name, item.description);
+                
+            }
 
-
-
-            return "I will help you latter";
         }
 
     }
