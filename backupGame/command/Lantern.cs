@@ -8,7 +8,7 @@ namespace backupGame.command
 {
     class Lantern : commands
     {
-        public Lantern()
+        public Lantern() //purpose of this command is unclear
         {
             name = "Lantern";
             description = "Run it now!";

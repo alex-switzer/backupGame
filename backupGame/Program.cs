@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// Console for Hack Game
+/// This will be the code for the console that should be found within the Graphical Unity Game
+
+
 namespace backupGame
 {
     class Program
@@ -32,34 +36,29 @@ namespace backupGame
                                            : new string[] { element })  // Keep the entire item
                      .SelectMany(element => element).ToList();
 
-                string text = "Please enter a registered command! For a full list type 'help'";
-                
+                string errorText = "Please enter a registered command, for a full list type 'help'"; //setting the default message to an error
+
+                bool commandFound = false; //automatically assign failure
 
                 if (result.Count != 0)
                 {
                     for (int i = 0; i < listOfCommands.Count; i++)
                     {
-                        if (listOfCommands[i].name.ToLower() == result[0].ToLower())
+                        string registeredCommand = listOfCommands[i].name.ToLower();
+                        string userCommand = result[0].ToLower();
+
+                        if (registeredCommand == userCommand)
                         {
-                            if (listOfCommands[i].name == "Help")
-                            {
-                                listOfCommands[i].lantern(result, listOfCommands);
-                            }
-                            else
-                            {
-                                listOfCommands[i].lantern(result);
+                            listOfCommands[i].lantern(result); //execute the matching command
 
-                            }
-
-
+                            if (registeredCommand == "help") listOfCommands[i].lantern(result, listOfCommands);
+                            commandFound = true; //matching command found, declare success
                         }
-                        
-
-
 
                     }
-
                 }
+
+                if (commandFound == false) Console.WriteLine(errorText); //if the user entered nothing, or their command wasn't found display error
 
             }
         }

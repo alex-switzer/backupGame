@@ -18,14 +18,14 @@ namespace backupGame.command
         {
             Random rnd = new Random();
 
-            if (result.Count == 2)
+            if (result.Count == 2) // i.e. if the user entered the name of the command and some numbers to ping
             {
                 if (stringClassifier.getIP(result[1]))
                 {
                     Console.WriteLine( "Pinging " + result[1] + "; Respone time " + rnd.Next(10, 100) + "ms");
                 }
             }
-            Console.WriteLine( "Use Ping [IP]");
+            else Console.WriteLine( "Use Ping [IP]");
         }
 
 
