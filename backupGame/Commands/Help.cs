@@ -17,13 +17,13 @@ namespace backupGame.command
         public override void lantern(List<string> result, List<commands> listOfCommands)
         {
             Console.WriteLine("\n" + "List of commands:" + "\n");
-            const int paddingBuffer = 30; //gap between command and description 
+            const int paddingBuffer = 30; //default gap between command and description 
             
-            foreach (var item in listOfCommands)
+            foreach (var command in listOfCommands)
             {
-                int paddingGap = paddingBuffer - item.name.Length;
+                int paddingGap = paddingBuffer - command.name.Length;
                 if (paddingGap < 0) paddingGap *= -1; //if the name is longer than the buffer of 30, avoid errors by avoiding negative numbers
-                Console.WriteLine("Command: {0}" + "Description: {1}".PadLeft(paddingGap), item.name, item.description);
+                Console.WriteLine("Command: {0}" + "Description: {1}".PadLeft(paddingGap), command.name, command.description);
                 
             }
 

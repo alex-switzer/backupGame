@@ -43,14 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="commands.cs" />
-    <Compile Include="command\Clear.cs" />
-    <Compile Include="command\Hack.cs" />
-    <Compile Include="command\Help.cs" />
-    <Compile Include="command\IP-Trace.cs" />
-    <Compile Include="command\Lantern.cs" />
-    <Compile Include="command\Ping.cs" />
-    <Compile Include="command\Sphinx.cs" />
-    <Compile Include="command\Time.cs" />
+    <Compile Include="Commands\Clear.cs" />
+    <Compile Include="Commands\Hack.cs" />
+    <Compile Include="Commands\Help.cs" />
+    <Compile Include="Commands\IP-Trace.cs" />
+    <Compile Include="Commands\Lantern.cs" />
+    <Compile Include="Commands\Ping.cs" />
+    <Compile Include="Commands\Sphinx.cs" />
+    <Compile Include="Commands\Time.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="stringClassifier.cs" />

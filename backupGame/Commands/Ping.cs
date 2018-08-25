@@ -17,6 +17,7 @@ namespace backupGame.command
         public override void lantern(List<string> result)
         {
             Random rnd = new Random();
+            string errorMessage = "Use Ping [IP]";
 
             if (result.Count == 2) // i.e. if the user entered the name of the command and some numbers to ping
             {
@@ -25,7 +26,7 @@ namespace backupGame.command
                     Console.WriteLine( "Pinging " + result[1] + "; Respone time " + rnd.Next(10, 100) + "ms");
                 }
             }
-            else Console.WriteLine( "Use Ping [IP]");
+            else Console.WriteLine(errorMessage);
         }
 
 
